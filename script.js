@@ -15,3 +15,16 @@ resetBtn.addEventListener("click", function(){
     localStorage.removeItem('name');
     input.value = ""
 });
+
+
+let time = 0;
+let element = document.getElementById('seconds-counter');
+
+function incrementSeconds() {
+    time += 1;
+    element.innerText = "sei qui da " + time + " secondi.";
+    sessionStorage.setItem("time", time);
+}
+
+var cancel = setInterval(incrementSeconds, 1000); // richiama la funzione ogni 1000 ms quindi 1s
+
